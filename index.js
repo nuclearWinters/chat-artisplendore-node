@@ -23,11 +23,9 @@ MongoClient.connect(config.database.url, menuOptions, (err, client) => {
     }
     else {
         app.locals.db = client.db("Chat")
+        app.locals.io = io
         server.listen(3000, () => {
             console.log('¡Usando el puerto 3000!');
-        });
-        io.on('connection', (socket) => {
-            app.locals.socket = socket
         });
     }
 });

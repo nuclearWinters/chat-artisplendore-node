@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+        <script>
+          var socket = io('http://192.168.1.64:3000');
+          //socket.emit('my event', { my: 'data' });
+          socket.on('my event', function (data) {
+            console.log(data);
+          });
+        </script>
+    </body>
+</html>
